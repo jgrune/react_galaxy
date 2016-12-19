@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../index.css'
+import ReactCanvas from 'react-canvas'
 
 class Sky extends Component {
   componentDidMount() {
@@ -7,15 +8,15 @@ class Sky extends Component {
   }
 
   updateCanvas() {
-    this._canvas = this.refs.canvas
-    this._ctx = this._canvas.getContext('2d');
-    this._ctx.fillStyle = 'white'
+    this.canvas = this.refs.canvas
+    this.ctx = this.canvas.getContext('2d');
+    this.ctx.fillStyle = 'white'
   }
 
   addNode(e) {
-    this._ctx.beginPath();
-    this._ctx.arc(e.clientX, e.clientY, 5, 0, Math.PI * 2);
-    this._ctx.fill();
+    this.ctx.beginPath();
+    this.ctx.arc(e.clientX, e.clientY, 5, 0, Math.PI * 2);
+    this.ctx.fill();
   }
 
   render() {
